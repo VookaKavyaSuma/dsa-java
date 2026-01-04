@@ -2,16 +2,16 @@ import java.util.Scanner;
 
 class KadaneAlgorithm {
     public static int KadaneAlg(int[] arr) {
-        int maxSum = 0, currentSum = 0;
-        for(int i = 0; i < arr.length; i++) {
+        int maxSum = arr[0], currentSum = arr[0];
+        for(int i = 1; i < arr.length; i++) {
             if(arr[i] + currentSum > 0) {
                 currentSum += arr[i];
-                maxSum = currentSum;
             } else {
-                currentSum = 0;
+                currentSum = arr[i];
             }
+            maxSum = Math.max(currentSum, maxSum);
         }
-        return Math.max(currentSum, maxSum);
+        return maxSum;
     }
 
     public static void main(String[] args) {
