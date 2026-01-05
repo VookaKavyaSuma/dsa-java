@@ -2,8 +2,10 @@ import java.util.*;
 
 class SlidingWindowMaxSum {
     static int slidingWindowMaxSum(int[] arr, int length) {
-        int sum = 0,finalSum = 0,i = 0;
+        int sum = 0,finalSum = 0,i = 0,n = arr.length;
 
+        if(n < k) return -1;
+        
         for(i = 0; i < length; i++) {
             sum += arr[i];
         }

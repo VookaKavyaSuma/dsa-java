@@ -2,11 +2,11 @@ import java.util.*;
 
 class SubArrayWithSumK {
     static int subArrayWithSumK(int[] arr, int K) {
-        int n = arr.length, sum = 0, j = 0, maxLen = 0, count = 0;;
+        int n = arr.length, sum = 0, j = 0, maxLen = 0, count = 0;
         for(int i = 0; i < n; i++) {
             sum += arr[i];
 
-            // if(sum > K) sum -= arr[j++];
+            if(sum > K) sum -= arr[j++];
 
             if(sum % K == 0) {
                 maxLen = Math.max(maxLen, i - j + 1);
