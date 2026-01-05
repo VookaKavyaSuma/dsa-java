@@ -6,9 +6,9 @@ class SubArrayWithSumK {
         for(int i = 0; i < n; i++) {
             sum += arr[i];
 
-            if(sum > K) sum -= arr[j++];
+            // if(sum > K) sum -= arr[j++];
 
-            if(sum == K) {
+            if(sum % K == 0) {
                 maxLen = Math.max(maxLen, i - j + 1);
                 count++;
             }
